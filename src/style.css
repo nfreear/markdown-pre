@@ -1,0 +1,24 @@
+
+.markdown-pre-js-out {
+  font: 1.1rem sans-serif;
+}
+
+.markdown-pre-js-src {
+  border: 1px solid #ccc;
+  font-size: .85rem;
+  padding: 0 0.4rem;
+}
+
+.markdown-pre-js-src,
+.markdown-pre-js-out {
+  color: #333;
+  line-height: 1.6;
+  margin: 1rem auto 2rem;
+  max-width: 38rem;
+}
+
+@media print {
+  .markdown-pre-js-src {
+    display: none;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "markdown-pre",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Convert the contents of the first `<PRE>` element I find from Markdown to HTML, using a one-line Javascript include.",
+  "unpkg": "dist/markdown-pre.js",
+  "dependencies": {
+    "markdown-it": "^8.4.2"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.3"
+  },
+  "files": [
+    "dist/markdown-pre.js",
+    "src/style.css"
+  ],
+  "scripts": {
+    "build": "browserify src/script.js -o dist/markdown-pre.js",
+    "test": "# Todo ..."
+  }
+}
