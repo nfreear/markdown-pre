@@ -8,14 +8,33 @@
     "markdown-it": "^8.4.2"
   },
   "devDependencies": {
-    "browserify": "^16.2.3"
+    "browserify": "^16.2.3",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.17.1"
   },
   "files": [
     "dist/markdown-pre.js",
     "src/style.css"
   ],
+  "prettier": {
+    "singleQuote": true
+  },
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "node": true,
+      "browser": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ]
+  },
   "scripts": {
     "build": "browserify src/script.js -o dist/markdown-pre.js",
-    "test": "# Todo ..."
+    "fix": "eslint --fix src",
+    "test": "eslint src"
   }
 }

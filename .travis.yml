@@ -1,0 +1,21 @@
+# https://medium.com/@gogl.alex/how-to-properly-set-up-eslint-with-prettier-for-vue-or-nuxt-in-vscode-e42532099a9c
+
+# os: linux
+
+dist: xenial # Faster.
+
+sudo: false
+
+language: node_js
+
+node_js: 11
+
+cache: npm
+
+# install: npm ci
+
+before_script: npm run build
+
+# script: npm test
+
+# End.
