@@ -4,6 +4,7 @@
   "license": "MIT",
   "description": "Convert the contents of the first `<PRE>` element I find from Markdown to HTML, using a 1-line Javascript include.",
   "unpkg": "dist/markdown-pre.js",
+  "repository": "https://github.com/nfreear/markdown-pre.git?utm_source=packagejson",
   "dependencies": {
     "markdown-it": "^8.4.2"
   },

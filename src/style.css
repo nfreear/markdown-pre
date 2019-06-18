@@ -4,6 +4,7 @@
 }
 
 .markdown-pre-js-out h1 {
+  font-weight: 400;
   margin: .9rem 0 0.5rem;
 }
 
@@ -12,8 +13,8 @@
 }
 
 .markdown-pre-js-src {
-  background: #fcfcfc;
-  border: 1px solid #ccc;
+  background: #fbfbfb;
+  border: 1px solid #ddd;
   font-size: .85rem;
   padding: 0 0.4rem;
 }
@@ -24,6 +25,25 @@
   line-height: 1.6;
   margin: 0 auto 2rem;
   max-width: 39rem;
+}
+
+.markdown-pre-js-out [ role = image ],
+.markdown-pre-js-out img {
+  border: 3px solid #bbb;
+  border-radius: .3rem;
+  display: block;
+  margin: 1rem auto;
+  max-width: 95%;
+}
+
+.markdown-pre-js-out a:focus img,
+.markdown-pre-js-out a:hover img {
+  border-color: orange;
+  transition: all 3s;
+}
+
+img[ src *= 'size=sm' ] {
+  max-width: 250px;
 }
 
 @media print {

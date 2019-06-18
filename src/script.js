@@ -19,7 +19,7 @@ const $STYLE = DOC.createElement('link');
 const SRC = $PRE.innerText;
 const HTML = MarkdownIt.render(SRC);
 
-$DEST.innerHTML = HTML;
+$DEST.innerHTML = getTitle(SRC) + HTML;
 
 $PRE.className += ' markdown-pre-js-src';
 $DEST.className = 'markdown-pre-js-out';
@@ -30,9 +30,25 @@ $STYLE.href = getStylesheetUrl();
 DOC.body.insertBefore($DEST, $PRE);
 DOC.body.appendChild($STYLE);
 
+DOC.head.innerHTML = getHtmlHead(SRC);
+
 // Was: console.warn('markdown-pre:', $PRE, $DEST);
 
 // ------------------------------
+
+function getTitle(source, html) {
+  html = typeof html === 'undefined' ? true : html;
+  const MATCHES = source.match(/\ntitle: (.+?)\n/);
+
+  // console.debug('markdown-pre.getTitle:', MATCHES);
+
+  return html ? '<h1> %s </h1>\n'.replace(/%s/, MATCHES[1]) : MATCHES[1];
+}
+
+function getHtmlHead(source) {
+  const HEAD_TPL = '<meta charset="utf-8"><title> %s </title>';
+  return HEAD_TPL.replace(/%s/, getTitle(source, false));
+}
 
 function getStylesheetUrl() {
   const IS_CDN_TEST = /\?test=data-cdn/.test(window.location.href);
